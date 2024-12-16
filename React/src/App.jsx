@@ -1,10 +1,9 @@
 import React from 'react'
-import Parent from './components/Parent'
-import Counter from './components/Reducer/Counter'
+import Input from './components/Reducer/InputBox/Input'
 
 const App = () => {
   return (
-    <Counter />
+    <Input />
   )
 }
 
