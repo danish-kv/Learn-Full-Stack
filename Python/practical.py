@@ -251,7 +251,7 @@ next_year = datetime(year=today.year+1, month=1, day=1)
 
 days_until_new_year = (next_year-today).days
 
-print(days_until_new_year)
+# print(days_until_new_year)
 
 
 
@@ -270,3 +270,113 @@ def print_primes_upto(n):
 
 # Example Usage
 # print_primes_upto(10)
+
+
+
+# class CustomError(Exception):
+#     def __init__(self, message):
+#         self.message = message
+#         super().__init__(self.message)
+
+
+# def validate_age(age):
+#     if age < 18:
+#         raise CustomError('Age must be older than 18')
+#     print('Valid age')
+
+# validate_age(10)
+
+
+
+
+
+
+
+# class Addition:
+#     def __init__(self, x, y):
+#         self.x = x
+#         self.y = y
+    
+#     def __add__(self, other):
+#         return Addition(self.x + other.x , self.y + other.y)
+
+
+
+# a1 = Addition(2, 3)
+# a2 = Addition(4, 5)
+# res = a1 + a2
+
+
+
+
+my_dict = {'name': 'danish', 'place' : 'malappuram'}
+long_val = 0
+key = ''
+for k, v in my_dict.items():
+    if len(v) > long_val:
+        long_val = len(v)
+        key = k
+my_dict.pop(key)
+print(key)
+print(my_dict)
+
+
+squre = lambda x : x * x
+squre_root = lambda x : x ** 0.5
+
+print(squre(10))
+print(squre_root(100))
+
+
+res = 0
+arr = [1, 'two', 'three', 4, 5]
+
+for i in arr:
+    if type(i) == int:
+        res += i
+print(res)
+
+
+
+
+
+
+
+
+
+
+
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def delete_next_even(self):
+        if self.head is None:
+            return False
+
+        n = self.head
+        while n.next:
+            if n.next.val % 2 == 0:
+                n.next = n.next.next
+            else:
+                n = n.next
+
+        return True
+
+    
+    def delete_prev_even(self):
+        if self.head and self.head.next is None:
+            return False
+
+        prev = None
+        curr = self.head
+
+        while curr:
+            if curr.data % 2 == 0:
+                if prev:
+                    prev.next = curr.next
